@@ -50,6 +50,7 @@ const AddProduct = () => {
   };
 
   return (
+    <div className="container">
     <div className="center-container">
       <form className="row g-3 pt-5" onSubmit={submitHandler}>
         <div className="col-md-6">
@@ -107,19 +108,26 @@ const AddProduct = () => {
             id="price"
           />
         </div>
-        <div className="col-md-6">
+     
+           <div className="col-md-6">
           <label className="form-label">
             <h6>Category</h6>
           </label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Eg : Fashion, Electronics etc ..."
-            onChange={handleInputChange}
+          <select
+            className="form-select"
             value={product.category}
+            onChange={handleInputChange}
             name="category"
             id="category"
-          />
+          >
+            <option value="">Select category</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Headphone">Headphone</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Toys">Toys</option>
+            <option value="Fashion">Fashion</option>
+          </select>
         </div>
 
         <div className="col-md-4">
@@ -127,7 +135,7 @@ const AddProduct = () => {
             <h6>Stock Quantity</h6>
           </label>
           <input
-            type="text"
+            type="number"
             className="form-control"
             placeholder="Stock Remaining"
             onChange={handleInputChange}
@@ -187,6 +195,7 @@ const AddProduct = () => {
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };
